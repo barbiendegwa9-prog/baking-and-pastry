@@ -1,0 +1,6 @@
+{
+  "name": "Artisanal Breads and Pastries",
+  "description": "An attractive, interactive full-featured platform for Artisanal Breads and Pastries. Features online ordering with a shopping cart, real-time delivery tracking, customer reviews, safety certification showcase, photo gallery, and a custom admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

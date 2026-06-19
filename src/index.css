@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Premium High-Contrast Dark & White Palette mapping */
+  --color-primary-50: #0a0a0a;
+  --color-primary-100: #171717;
+  --color-primary-200: #262626;
+  --color-primary-300: #404040;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #ffffff;
+  --color-primary-600: #ffffff;
+  --color-primary-700: #f5f5f5;
+  --color-primary-800: #e5e5e5;
+  --color-primary-900: #ffffff;
+
+  --color-brand-50: #050505;
+  --color-brand-900: #ffffff;
+
+  /* Map basic tailwind stone variations to pristine monochrome shades */
+  --color-stone-50: #080808;
+  --color-stone-100: #141414;
+  --color-stone-150: #1a1a1a;
+  --color-stone-200: #262626;
+  --color-stone-250: #2d2d2d;
+  --color-stone-300: #3f3f3f;
+  --color-stone-400: #737373;
+  --color-stone-500: #a3a3a3;
+  --color-stone-600: #d4d4d4;
+  --color-stone-650: #e5e5e5;
+  --color-stone-700: #e5e5e5;
+  --color-stone-800: #f5f5f5;
+  --color-stone-850: #ffffff;
+  --color-stone-900: #ffffff;
+  --color-stone-950: #ffffff;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #060606 !important;
+  color: #ffffff !important;
+
+  /* Theme color overrides for dark mode */
+  --color-primary-50: #0a0a0a;
+  --color-primary-100: #171717;
+  --color-primary-200: #262626;
+  --color-primary-300: #404040;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #ffffff;
+  --color-primary-600: #ffffff;
+  --color-primary-700: #f5f5f5;
+  --color-primary-800: #e5e5e5;
+  --color-primary-900: #ffffff;
+
+  --color-brand-50: #050505;
+  --color-brand-900: #ffffff;
+
+  --color-stone-50: #080808;
+  --color-stone-100: #141414;
+  --color-stone-150: #1a1a1a;
+  --color-stone-200: #262626;
+  --color-stone-250: #2d2d2d;
+  --color-stone-300: #3f3f3f;
+  --color-stone-400: #737373;
+  --color-stone-500: #a3a3a3;
+  --color-stone-600: #d4d4d4;
+  --color-stone-650: #e5e5e5;
+  --color-stone-700: #e5e5e5;
+  --color-stone-800: #f5f5f5;
+  --color-stone-850: #ffffff;
+  --color-stone-900: #ffffff;
+  --color-stone-950: #ffffff;
+}
+
+body.light-mode {
+  background-color: #fcfbfa !important;
+  color: #1c1917 !important;
+
+  /* Theme color overrides for light mode */
+  --color-primary-50: #fcfbfa;
+  --color-primary-100: #f7f5f2;
+  --color-primary-200: #e7e3df;
+  --color-primary-300: #dedad5;
+  --color-primary-400: #a19a93;
+  --color-primary-500: #1c1917;
+  --color-primary-600: #1c1917;
+  --color-primary-700: #292524;
+  --color-primary-800: #44403c;
+  --color-primary-900: #1c1917;
+
+  --color-brand-50: #fcfbfa;
+  --color-brand-900: #1c1917;
+
+  --color-stone-50: #fdfdfd;
+  --color-stone-100: #f7f5f2;
+  --color-stone-150: #f0ede9;
+  --color-stone-200: #e7e3df;
+  --color-stone-250: #dedad5;
+  --color-stone-300: #c2bdb6;
+  --color-stone-400: #8c857b;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-650: #44403c;
+  --color-stone-700: #1c1917;
+  --color-stone-800: #1c1917;
+  --color-stone-850: #1c1917;
+  --color-stone-900: #1a1512;
+  --color-stone-950: #0c0a09;
+}
+
+/* Global color overrides for Dark & White layout */
+
+/* Translate white panel cards depending on mode */
+body.dark-mode .bg-white {
+  background-color: #0d0d0d !important;
+  border-color: #222222 !important;
+}
+body.light-mode .bg-white {
+  background-color: #ffffff !important;
+  border-color: #e7e5e4 !important;
+}
+
+/* Translucent layer overrides for header and map lightboxes */
+body.dark-mode .bg-white\/95 {
+  background-color: rgba(13, 13, 13, 0.95) !important;
+}
+body.light-mode .bg-white\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+body.dark-mode .bg-white\/90 {
+  background-color: rgba(13, 13, 13, 0.90) !important;
+}
+body.light-mode .bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.90) !important;
+}
+
+/* Ensure text-white is always pure, crisp white */
+.text-white {
+  color: #ffffff !important;
+}
+
+/* Standard text color forces to crisp light grays / silvers or rich charcoal */
+body.dark-mode .text-stone-900, body.dark-mode .text-stone-950, body.dark-mode .text-primary-900 {
+  color: #ffffff !important;
+}
+body.light-mode .text-stone-900, body.light-mode .text-stone-950, body.light-mode .text-primary-900 {
+  color: #1c1917 !important;
+}
+
+body.dark-mode .text-stone-701, body.dark-mode .text-stone-700, body.dark-mode .text-stone-801, body.dark-mode .text-stone-901 {
+  color: #f3f4f6 !important;
+}
+body.light-mode .text-stone-701, body.light-mode .text-stone-700, body.light-mode .text-stone-801, body.light-mode .text-stone-901 {
+  color: #292524 !important;
+}
+
+body.dark-mode .text-stone-500, body.dark-mode .text-stone-600, body.dark-mode .text-stone-650, body.dark-mode .text-primary-955\/60, body.dark-mode .text-primary-900\/60 {
+  color: #a3a3a3 !important;
+}
+body.light-mode .text-stone-500, body.light-mode .text-stone-600, body.light-mode .text-stone-650, body.light-mode .text-primary-955\/60, body.light-mode .text-primary-900\/60 {
+  color: #57534e !important;
+}
+
+body.dark-mode .text-stone-300, body.dark-mode .text-stone-200, body.dark-mode .text-primary-300 {
+  color: #e5e5e5 !important;
+}
+body.light-mode .text-stone-300, body.light-mode .text-stone-200, body.light-mode .text-primary-300 {
+  color: #44403c !important;
+}
+
+/* Elegant, non-distracting input styling */
+body.dark-mode input, body.dark-mode select, body.dark-mode textarea {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border-color: #262626 !important;
+}
+body.light-mode input, body.light-mode select, body.light-mode textarea {
+  background-color: #ffffff !important;
+  color: #1c1917 !important;
+  border-color: #d6d3d1 !important;
+}
+
+body.dark-mode input:focus, body.dark-mode select:focus, body.dark-mode textarea:focus {
+  border-color: #ffffff !important;
+  background-color: #161616 !important;
+  outline: none !important;
+}
+body.light-mode input:focus, body.light-mode select:focus, body.light-mode textarea:focus {
+  border-color: #1c1917 !important;
+  background-color: #faf9f6 !important;
+  outline: none !important;
+}
+
+body.dark-mode input::placeholder, body.dark-mode textarea::placeholder {
+  color: #555555 !important;
+}
+body.light-mode input::placeholder, body.light-mode textarea::placeholder {
+  color: #a8a29e !important;
+}
+
+/* Make action buttons solid white/black depending on theme */
+body.dark-mode .bg-primary-500, body.dark-mode .bg-primary-600, body.dark-mode .bg-stone-900, body.dark-mode .bg-primary-900, body.dark-mode .bg-[#3D2B1F] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+body.light-mode .bg-primary-500, body.light-mode .bg-primary-600, body.light-mode .bg-stone-900, body.light-mode .bg-primary-900, body.light-mode .bg-[#3D2B1F] {
+  background-color: #1c1917 !important;
+  color: #ffffff !important;
+  border-color: #1c1917 !important;
+}
+
+/* Force text/icon inside our classic action buttons */
+body.dark-mode .bg-primary-500 *, body.dark-mode .bg-primary-600 *, body.dark-mode .bg-stone-900 *, body.dark-mode .bg-primary-900 *, body.dark-mode .bg-[#3D2B1F] * {
+  color: #000000 !important;
+}
+body.light-mode .bg-primary-500 *, body.light-mode .bg-primary-600 *, body.light-mode .bg-stone-900 *, body.light-mode .bg-primary-900 *, body.light-mode .bg-[#3D2B1F] * {
+  color: #ffffff !important;
+}
+
+body.dark-mode .bg-primary-500:hover, body.dark-mode .bg-primary-600:hover, body.dark-mode .bg-stone-900:hover, body.dark-mode .bg-primary-900:hover, body.dark-mode .bg-[#3D2B1F]:hover {
+  background-color: #e5e5e5 !important;
+}
+body.light-mode .bg-primary-500:hover, body.light-mode .bg-primary-600:hover, body.light-mode .bg-stone-900:hover, body.light-mode .bg-primary-900:hover, body.light-mode .bg-[#3D2B1F]:hover {
+  background-color: #292524 !important;
+}
+
+/* Toggle pills and secondary tags */
+body.dark-mode .bg-primary-50, body.dark-mode .bg-stone-50 {
+  background-color: #161616 !important;
+  color: #ffffff !important;
+}
+body.light-mode .bg-primary-50, body.light-mode .bg-stone-50 {
+  background-color: #f5f5f4 !important;
+  color: #1c1917 !important;
+}
+
+body.dark-mode .bg-primary-50 *, body.dark-mode .bg-stone-50 * {
+  color: #ffffff !important;
+}
+body.light-mode .bg-primary-50 *, body.light-mode .bg-stone-50 * {
+  color: #1c1917 !important;
+}
+
+body.dark-mode .bg-primary-50:hover, body.dark-mode .bg-stone-50:hover {
+  background-color: #222222 !important;
+}
+body.light-mode .bg-primary-50:hover, body.light-mode .bg-stone-50:hover {
+  background-color: #e7e5e4 !important;
+}
+
+body.dark-mode .bg-primary-100 {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+}
+body.light-mode .bg-primary-100 {
+  background-color: #e7e5e4 !important;
+  color: #1c1917 !important;
+}
+
+body.dark-mode .bg-primary-100 * {
+  color: #ffffff !important;
+}
+body.light-mode .bg-primary-100 * {
+  color: #1c1917 !important;
+}
+
+/* Correct badges */
+body.dark-mode .bg-emerald-50, body.dark-mode .bg-emerald-100 {
+  background-color: #064e3b !important;
+  color: #fcfdfd !important;
+}
+body.light-mode .bg-emerald-50, body.light-mode .bg-emerald-100 {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+body.dark-mode .bg-emerald-50 *, body.dark-mode .bg-emerald-100 * {
+  color: #d1fae5 !important;
+}
+body.light-mode .bg-emerald-50 *, body.light-mode .bg-emerald-100 * {
+  color: #065f46 !important;
+}
+
+body.dark-mode .bg-amber-100 {
+  background-color: #78350f !important;
+  color: #fef3c7 !important;
+}
+body.light-mode .bg-amber-100 {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+/* Ensure table structures and line transitions are minimal and stylish */
+body.dark-mode tr:hover {
+  background-color: #121212 !important;
+}
+body.light-mode tr:hover {
+  background-color: #f5f5f4 !important;
+}
+
+body.dark-mode td, body.dark-mode th {
+  border-color: #1e1e1e !important;
+}
+body.light-mode td, body.light-mode th {
+  border-color: #e7e5e4 !important;
+}
+
+/* Custom scrollbar for modern browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Modal lightbox animations */
+.lightbox-zoom {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox-zoom:hover {
+  transform: scale(1.05);
+}
+
